@@ -6,9 +6,8 @@
     border-radius: 10px;
     display: grid;
     grid-template-rows: 20px auto 25px;
-    align-content: 'center';
     padding: 2%;
-    
+    row-gap: 5px;
 }
 
 .phone_microphone{
