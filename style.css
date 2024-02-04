@@ -7,6 +7,15 @@
     --brush-hand-color: rgb(0, 0, 118);
 }
 
+.container {
+    border: 1px solid;
+    position: relative;
+}
+
+
+
+
+
 .phone {
     border: 2px solid black;
     height: var(--phone_height);
@@ -27,6 +36,7 @@
 
 
 .phone_screen {
+    position: relative;
     border: 1px solid blue;
 }
 
@@ -39,14 +49,24 @@
 }
 
 .brush {
-    position: relative;
+    position: absolute;
     width: calc(var(--phone_width) + var(--phone_pad)*2);
     min-width: 210px;
     height: 200px;
+}
+.blue {
+    animation: slidein 5s infinite;
+
+}
+.red {
+    animation: slidein 5s infinite;
+}
+.red *:nth-child(6){
+    background-color: red !important;
 
 }
 
-.brush *:nth-child(6),
+.brush *:nth-child(1),
 .brush *:nth-child(3) {
 
     background-color: var(--metal-color);
@@ -68,7 +88,7 @@
 
 
 
-.brush *:nth-child(1) {
+.brush *:nth-child(6) {
     position: absolute;
     top: 0;
     transform: translateY(-50%);
@@ -116,7 +136,7 @@
 }
 
 
-.brush *:nth-child(6) {
+.brush *:nth-child(1) {
 
     position: absolute;
     top: 0;
@@ -125,12 +145,71 @@
 }
 
 
+
+
+
+.painted{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    animation: painting 10s infinite;
+}
+
 @keyframes slidein {
-    from {
-        transform: translateX(0%);
+    0% {
+        margin-left: 60%;
+        top: 70%;
+        transform: rotate(-30deg);
     }
 
-    to {
-        transform: translateX(100%);
+    20% {
+        margin-left: 0%;
+        top: 10%;
+        margin-bottom: 50px;
+        transform: rotate(0deg);
+    }
+
+    60% {
+        margin-left: 0%;
+        top: 90%;
+        margin-bottom: 50px;
+        transform: rotate(0deg);
+    }
+    100% {
+        margin-left: 60%;
+        top: 70%;
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes painting {
+    0%{
+        height: 0;
+        background-color: blue;
+}
+    10%{
+        height : 0;
+        background-color: blue;
+    }
+    30%{
+        height: 100%;
+        background-color: blue;
+    }  
+    50%{
+        height: 0;
+        background-color: blue;
+    }
+    60%{
+        height : 0;
+        background-color: red;
+    }
+    80%{
+        height: 100%;
+        background-color: red;
+    }
+    100%{
+        height: 0;
+        background-color: red;
     }
 }
