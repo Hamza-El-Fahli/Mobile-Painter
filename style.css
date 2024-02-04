@@ -33,8 +33,10 @@
     position: fixed;
     right: 10px;
     top: 20px;
-    border: 3px solid ;
     width: 100px;
+    height: 100px;
+    border-top: 4px solid gray;
+    
 }
 
 .brush *:nth-child(1){
@@ -50,20 +52,34 @@
 
 
 .brush *:nth-child(2){
-    border: 1px solid;
+    
 }
 
 
 .brush *:nth-child(3){
-    border: 1px solid;
-}
+    border: 3px solid gray;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30%;
+    
 
+}
 
 .brush *:nth-child(4){
-    border: 1px solid;
+    border: 3px solid gray;
+
+    position: absolute;
+    top: 30%;
+    right: 0;
+    width: 50%;
 }
-.brush *:nth-child(5){
-    border: 1px solid;
-}
+    .brush *:nth-child(5){
+        border: 3px solid gray;
+        position: absolute;
+        top: 30%;
+        right: 50%;
+        height: 30%;
+        }
 
 
