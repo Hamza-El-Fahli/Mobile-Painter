@@ -1,10 +1,15 @@
-div{
-    display: inline-block;
-}
 
 .phone{
     border : 2px solid black;
     height : 320px;
     width : 200px;
     border-radius: 10px;
+    display: grid;
+    grid-template-rows: 5% auto 5%;
+}
+.phone_screen{
+    border: 1px solid blue;
+    height :95%;
+    width: 90%;
+
 }
