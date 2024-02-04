@@ -1,16 +1,24 @@
+:root {
+    --phone_width: 200px;
+    --phone_height: 400px;
+    --phone_pad: 10px;
+    --metal-width: 5px;
+    --metal-color: gray;
+    --brush-hand-color: rgb(0, 0, 118);
+}
 
-.phone{
-    border : 2px solid black;
-    height : 400px;
-    width : 200px;
+.phone {
+    border: 2px solid black;
+    height: var(--phone_height);
+    width: var(--phone_width);
     border-radius: 10px;
     display: grid;
     grid-template-rows: 20px auto 25px;
-    padding: 2%;
+    padding: var(--phone_pad);
     row-gap: 5px;
 }
 
-.phone_microphone{
+.phone_microphone {
     margin: auto;
     border: 3px solid;
     border-radius: 5px;
@@ -18,10 +26,11 @@
 }
 
 
-.phone_screen{
+.phone_screen {
     border: 1px solid blue;
 }
-.phone_button{
+
+.phone_button {
     margin: auto;
     background-color: black;
     border-radius: 50%;
@@ -29,64 +38,99 @@
     aspect-ratio: 1;
 }
 
-.brush{
-    position: fixed;
-    right: 10px;
-    top: 20px;
-    width: 100px;
-    height: 100px;
-    border-top: 4px solid gray;
-    
+.brush {
+    position: relative;
+    width: calc(var(--phone_width) + var(--phone_pad)*2);
+    min-width: 210px;
+    height: 200px;
+
 }
 
-.brush *:nth-child(1){
+.brush *:nth-child(6),
+.brush *:nth-child(3) {
+
+    background-color: var(--metal-color);
+    height: calc(var(--metal-width) * 2);
+    border-radius: 5px;
+}
+
+.brush *:nth-child(2),
+.brush *:nth-child(4) {
+
+    background-color: var(--metal-color);
+    width: calc(var(--metal-width) * 2);
+    border-radius: 5px;
+    height: 33%;
+}
+
+
+
+
+
+
+.brush *:nth-child(1) {
     position: absolute;
     top: 0;
     transform: translateY(-50%);
-    width: 80%;
+    width: var(--phone_width);
+    left: var(--phone_pad);
     height: 30%;
     border-radius: 5px;
-    margin-left: 10%;
     background-color: blue;
 }
 
 
 
-.brush *:nth-child(2){
-    border: 3px solid gray;
+.brush *:nth-child(2) {
+
     position: absolute;
-    top: 0;
     right: 0;
-    height: 30%;
-    
+
 
 }
 
-.brush *:nth-child(3){
-    border: 3px solid gray;
+.brush *:nth-child(3) {
     position: absolute;
     top: 30%;
     right: 0;
     width: 50%;
 }
-    .brush *:nth-child(4){
-        border: 3px solid gray;
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translateX(-50%);
 
-        height: 30%;
-        }
-.brush *:nth-child(5){
-    background-color: blue;
+.brush *:nth-child(4) {
+
     position: absolute;
-    bottom: 0;
-    height: 35%;
+    top: 30%;
+    right: 50%;
+    transform: translateX(60%);
+}
+
+.brush *:nth-child(5) {
+    background-color: var(--brush-hand-color);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 10%;
+    height: 40%;
     width: 20%;
-    top: 50%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 
+.brush *:nth-child(6) {
+
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+}
+
+
+@keyframes slidein {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
