@@ -1,15 +1,26 @@
 
 .phone{
     border : 2px solid black;
-    height : 320px;
+    height : 400px;
     width : 200px;
     border-radius: 10px;
     display: grid;
-    grid-template-rows: 5% auto 5%;
+    grid-template-rows: 20px auto 25px;
+    align-content: 'center';
+    padding: 2%;
 }
+
+.phone_microphone{
+    margin: auto;
+    border: 3px solid;
+    border-radius: 5px;
+    width: 30%;
+}
+
+
 .phone_screen{
     border: 1px solid blue;
-    height :95%;
-    width: 90%;
-
+}
+.phone_button{
+    margin: auto;
 }
