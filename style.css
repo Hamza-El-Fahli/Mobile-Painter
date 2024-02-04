@@ -1,0 +1,10 @@
+div{
+    display: inline-block;
+}
+
+.phone{
+    border : 2px solid black;
+    height : 320px;
+    width : 200px;
+    border-radius: 10px;
+}
