@@ -8,6 +8,7 @@
     grid-template-rows: 20px auto 25px;
     align-content: 'center';
     padding: 2%;
+    
 }
 
 .phone_microphone{
@@ -23,4 +24,8 @@
 }
 .phone_button{
     margin: auto;
+    background-color: black;
+    border-radius: 50%;
+    width: 10%;
+    aspect-ratio: 1;
 }
