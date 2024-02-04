@@ -28,3 +28,35 @@
     width: 10%;
     aspect-ratio: 1;
 }
+
+.brush{
+    position: fixed;
+    right: 0;
+    top: 0;
+    border: 3px solid ;
+    width: 50px;
+}
+
+.brush *:nth-child(1){
+    border: 1px solid;
+}
+
+
+.brush *:nth-child(2){
+    border: 1px solid;
+}
+
+
+.brush *:nth-child(3){
+    border: 1px solid;
+}
+
+
+.brush *:nth-child(4){
+    border: 1px solid;
+}
+.brush *:nth-child(5){
+    border: 1px solid;
+}
+
+
