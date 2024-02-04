@@ -5,11 +5,23 @@
     --metal-width: 5px;
     --metal-color: gray;
     --brush-hand-color: rgb(0, 0, 118);
+
+
+    --brush-left-color: #F6FDC3;
+    --brush-right-color: #CDFADB;
+    --animation : 10s;
+    --brush-margin : 100%;
+    --brush-rotation : 30deg;
 }
 
 .container {
-    border: 1px solid;
     position: relative;
+    display: flex;
+margin-left: 50%;
+transform: translateX(-50%);  
+width: 600px ;  
+justify-content: center;
+margin-top: 10%;
 }
 
 
@@ -17,7 +29,6 @@
 
 
 .phone {
-    border: 2px solid black;
     height: var(--phone_height);
     width: var(--phone_width);
     border-radius: 10px;
@@ -25,24 +36,26 @@
     grid-template-rows: 20px auto 25px;
     padding: var(--phone_pad);
     row-gap: 5px;
+    box-shadow: 0px 0px 15px 5px #C4DFDF;
 }
 
 .phone_microphone {
     margin: auto;
-    border: 3px solid;
+    border: 3px solid #C4DFDF;
     border-radius: 5px;
-    width: 30%;
+    width: 40%;
 }
 
 
 .phone_screen {
     position: relative;
-    border: 1px solid blue;
+    animation: phoneScreen 10s infinite;
 }
 
 .phone_button {
     margin: auto;
-    background-color: black;
+    background-color: #C4DFDF;
+    border:2px solid #b5d8d8;
     border-radius: 50%;
     width: 10%;
     aspect-ratio: 1;
@@ -55,14 +68,14 @@
     height: 200px;
 }
 .blue {
-    animation: slidein 5s infinite;
+    animation: blue-brush-animation var(--animation) infinite;
 
 }
 .red {
-    animation: slidein 5s infinite;
+    animation: red-brush-animation var(--animation) infinite;
 }
 .red *:nth-child(6){
-    background-color: red !important;
+    background-color:  var(--brush-left-color) !important;
 
 }
 
@@ -96,7 +109,7 @@
     left: var(--phone_pad);
     height: 30%;
     border-radius: 5px;
-    background-color: blue;
+    background-color:  var(--brush-right-color);
 }
 
 
@@ -108,12 +121,21 @@
 
 
 }
+.red *:nth-child(2) {
+
+    left: 0;
+
+
+}
 
 .brush *:nth-child(3) {
     position: absolute;
     top: 30%;
     right: 0;
     width: 50%;
+}
+.red *:nth-child(3) {
+    left: 0 !important;
 }
 
 .brush *:nth-child(4) {
@@ -153,63 +175,124 @@
     position: absolute;
     top: 0;
     width: 100%;
-    animation: painting 10s infinite;
+    animation: painting var(--animation) infinite;
 }
 
-@keyframes slidein {
+@keyframes blue-brush-animation {
     0% {
-        margin-left: 60%;
+        margin-right: calc(var(--brush-margin) * -1);
         top: 70%;
-        transform: rotate(-30deg);
+        transform: rotate(calc(var(--brush-rotation)*-1));
     }
 
-    20% {
-        margin-left: 0%;
+    10% {
+        margin-right: 0%;
         top: 10%;
         margin-bottom: 50px;
         transform: rotate(0deg);
     }
 
+    30% {
+        margin-right: 0%;
+        top: 90%;
+        margin-bottom: 50px;
+        transform: rotate(0deg);
+    }
+    50% {
+        margin-right: calc(var(--brush-margin) * -1);
+        top: 70%;
+        transform: rotate(calc(var(--brush-rotation)*-1));
+    }
+    100%{
+    
+        margin-right: calc(var(--brush-margin) * -1);
+            top: 70%;
+            transform: rotate(calc(var(--brush-rotation)*-1));
+        }
+}
+@keyframes red-brush-animation {
+    0% {
+        margin-right: var(--brush-margin);
+        top: 70%;
+        transform: rotate(var(--brush-rotation));
+    }
+    50% {
+        margin-right: var(--brush-margin);
+        top: 70%;
+        transform: rotate(var(--brush-rotation));
+    }
+
     60% {
-        margin-left: 0%;
+        margin-right: 0%;
+        top: 10%;
+        margin-bottom: 50px;
+        transform: rotate(0deg);
+    }
+
+    80% {
+        margin-right: 0%;
         top: 90%;
         margin-bottom: 50px;
         transform: rotate(0deg);
     }
     100% {
-        margin-left: 60%;
+        margin-right: var(--brush-margin);
         top: 70%;
-        transform: rotate(-30deg);
+        transform: rotate(var(--brush-rotation));
     }
 }
 
 @keyframes painting {
     0%{
         height: 0;
-        background-color: blue;
+        background-color:  var(--brush-right-color);
 }
     10%{
         height : 0;
-        background-color: blue;
+        background-color:  var(--brush-right-color);
     }
     30%{
         height: 100%;
-        background-color: blue;
+        background-color:  var(--brush-right-color);
     }  
     50%{
         height: 0;
-        background-color: blue;
+        background-color:  var(--brush-right-color);
     }
     60%{
         height : 0;
-        background-color: red;
+        background-color:  var(--brush-left-color);
     }
     80%{
         height: 100%;
-        background-color: red;
+        background-color:  var(--brush-left-color);
     }
     100%{
         height: 0;
-        background-color: red;
+        background-color:  var(--brush-left-color);
     }
+}
+
+
+@keyframes phoneScreen {
+    0%{
+        background-color:  var(--brush-left-color);
+    }
+    25%{
+        background-color:  var(--brush-left-color);
+    }
+    26%{
+        background-color:  var(--brush-right-color);
+    }
+    75%{
+        background-color:  var(--brush-right-color);
+    }
+    76%{
+        background-color:  var(--brush-left-color);
+    }
+    100%{
+
+        background-color:  var(--brush-left-color);
+    }
+    
 }
