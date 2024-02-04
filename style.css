@@ -1,7 +1,7 @@
 :root {
     --phone_width: 200px;
     --phone_height: 400px;
-    --phone_pad: 10px;
+    --phone_pad: 15px;
     --metal-width: 5px;
     --metal-color: gray;
     --brush-hand-color: rgb(0, 0, 118);
@@ -49,7 +49,7 @@ margin-top: 10%;
 
 .phone_screen {
     position: relative;
-    animation: phoneScreen 10s infinite;
+    animation: phoneScreen var(--animation) infinite;
 }
 
 .phone_button {
@@ -132,7 +132,7 @@ margin-top: 10%;
     position: absolute;
     top: 30%;
     right: 0;
-    width: 50%;
+    width: 52%;
 }
 .red *:nth-child(3) {
     left: 0 !important;
