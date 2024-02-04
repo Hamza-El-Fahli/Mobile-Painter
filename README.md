@@ -1,4 +1,4 @@
-# Mobile Printer
+# Mobile Painter
 ## Simple animation using HTML and SCSS
 
 
